@@ -1,7 +1,6 @@
 fn main() {
     let gifts: Vec<&str> = get_gifts();
-    let days: [usize; 12] = core::array::from_fn(|day| day + 1);
-
+    let days: [usize; 12] = get_days();
     for day in days {
         print_chorus(&day, &gifts);
     }
@@ -88,4 +87,8 @@ fn get_gifts() -> Vec<&'static str> {
         "Eleven pipers piping",
         "Twelve drummers drumming",
     ];
+}
+
+fn get_days() -> [usize; 12] {
+    return core::array::from_fn(|day| day + 1);
 }
