@@ -73,7 +73,7 @@ fn format_current_gift_in_phrase<'a>(
     return format!("{},", current_gift);
 }
 
-fn get_gifts<'a>() -> Vec<&'a str> {
+fn get_gifts() -> Vec<&'static str> {
     return vec![
         "A partridge in a pear tree",
         "Two turtle doves",
