@@ -9,7 +9,7 @@ fn main() {
 
 fn print_chorus(day: &u8, phrases: &Vec<&str>) {
     println!("On the {day} day of christmas,");
-    println!("my true love gave me...\n");
+    println!("my true love gave to me...\n");
 
     print_gifts(day, phrases);
     println!("---");
@@ -23,20 +23,27 @@ fn print_gifts(day: &u8, phrases: &Vec<&str>) {
         let current_phrase = phrases
             .get(current_day)
             .expect("current_day out of range?");
-
-        if day > &1 && current_day == 0 {
-            println!("... and {}", current_phrase.to_lowercase());
-        } else {
-            println!("{current_phrase}");
-        }
-        
-
+       
+        println!("{}", format_current_phrase(&current_phrase, &day, &current_day));
         if current_day < 1 {
             break;
         }
 
         current_day -= 1;
     }
+}
+
+fn format_current_phrase<'a>(
+    current_phrase: &str,
+    day: &u8,
+    current_day: &usize
+) -> String {
+
+    if day > &1 && current_day == &0 {
+        return format!("... and {}!", current_phrase.to_lowercase());
+    }
+
+    return format!("{}, ", current_phrase);
 }
 
 fn get_phrases_days_of_christmas<'a>() -> Vec<&'a str> {
