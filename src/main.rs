@@ -38,7 +38,7 @@ fn print_gifts(day: &usize, gifts: &[&str]) {
         return;
     }
 
-    let mut current_gift_idx = (*day - 1) as usize;
+    let mut current_gift_idx = *day - 1;
     loop {
         let current_gift = match gifts.get(current_gift_idx) {
             Some(gift) => gift.to_string(),
@@ -57,7 +57,7 @@ fn print_gifts(day: &usize, gifts: &[&str]) {
     }
 }
 
-fn format_current_gift_in_phrase<'a>(
+fn format_current_gift_in_phrase(
     current_gift: &String,
     day: &usize,
     current_gift_idx: &usize,
