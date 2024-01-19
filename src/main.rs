@@ -82,5 +82,10 @@ fn get_gifts<'a>() -> Vec<&'a str> {
         "Five golden rings",
         "Six geese a-laying",
         "Seven swans a-swimming",
+        "Eight maids a-milking",
+        "Nine ladies dancing",
+        "Ten lords a-leaping",
+        "Eleven pipers piping",
+        "Twelve drummers drumming",
     ];
 }
